@@ -250,6 +250,11 @@ func volumeMountFields() map[string]*schema.Schema {
 			Default:      "None",
 			ValidateFunc: validation.StringInSlice([]string{"None", "HostToContainer", "Bidirectional"}, false),
 		},
+		"sub_path_expr": {
+			Type:        schema.TypeString,
+			Description: "Expression for dynamically configuring the sub-path within the volume.",
+			Optional:    true,
+		},
 	}
 }
 
